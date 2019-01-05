@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 2016-2014, CloudSub technology Co., Ltd.
+
+    All rights reserved.
+
+-->
+
+<!--
+    Description:  MyBatis mysql generated configuration。
+    Version: 1.0.0, Nov 21, 2016
+    Author:
+-->
+
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="DB2Tables" targetRuntime="MyBatis3" defaultModelType="flat">
+        <plugin type="com.jp.maven.plugin.mybatis.RenameExampleClassPlugin">
+            <property name="searchString" value="Example$"/>
+            <property name="replaceString" value="Criteria"/>
+        </plugin>
+        <plugin type="com.jp.maven.plugin.mybatis.SerializablePlugin"/>
+        <!-- <plugin type="com.jp.maven.plugin.mybatis.MySQLPaginationPlugin"></plugin>-->
+
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://192.168.2.185:3306/zpzc_ms?useUnicode=true"
+                        userId="root" password="root">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.jp.zpzc.entity.gen" targetProject="src/main/java/">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="com.jp.zpzc.dao.gen.mysql" targetProject="src/main/resources/">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.jp.zpzc.dao.gen"
+                             targetProject="src/main/java/">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!--<table tableName="jp_sys_banner" domainObjectName="Banner">
+           <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />
+           <columnOverride column="ID" property="id" javaType="String" />
+        </table>
+
+        <table tableName="jp_sys_user" domainObjectName="User">
+            <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />
+            <columnOverride column="ID" property="id" javaType="String" />
+        </table>
+        <table tableName="jp_sys_role" domainObjectName="Role">
+            <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />
+            <columnOverride column="ID" property="id" javaType="String" />
+        </table>
+        <table tableName="v_user_privilege" domainObjectName="VUserPrivilege">
+             <columnOverride column="USERID" property="useId" javaType="String" />
+             <columnOverride column="ROLEID" property="roleId" javaType="String" />
+             <columnOverride column="RESOURCEID" property="resourceId" javaType="String" />
+             <columnOverride column="PRIVILEGEID" property="privilegeId" javaType="String" />
+         </table>
+
+        <table tableName="jp_sys_user_role" domainObjectName="UserRole">
+            <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />
+            <columnOverride column="ID" property="id" javaType="String" />
+        </table>
+
+         <table tableName="jp_sys_role_privilege" domainObjectName="RolePrivilege">
+             <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />
+             <columnOverride column="ID" property="id" javaType="String" />
+         </table>
+         <table tableName="jp_sys_resource" domainObjectName="Resource">
+             <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />
+             <columnOverride column="ID" property="id" javaType="String" />
+         </table>
+         <table tableName="jp_sys_privilege" domainObjectName="Privilege">
+             <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />
+             <columnOverride column="ID" property="id" javaType="String" />
+         </table>
+        <table tableName="v_privilege" domainObjectName="VPrivilege">
+            <columnOverride column="id" property="id" javaType="String" />
+            <columnOverride column="actionid" property="actionId" javaType="String" />
+            <columnOverride column="resourceid" property="resourceId" javaType="String" />
+            <columnOverride column="parent_id" property="parentId" javaType="String" />
+        </table>
+        <table tableName="jp_product" domainObjectName="Product">
+            <generatedKey column="id" sqlStatement="select uuid_short()" identity="false" />
+            <columnOverride column="id" property="id" javaType="String" />
+        </table>
+
+        <table tableName="jp_producut_category" domainObjectName="ProductCategory">
+            <generatedKey column="id" sqlStatement="select uuid_short()" identity="false" />
+        </table>
+        <table tableName="jp_classify" domainObjectName="Classify">
+            <generatedKey column="id" sqlStatement="select uuid_short()" identity="false" />
+        </table>
+
+        <table tableName="jp_standard" domainObjectName="Standard">
+            <generatedKey column="id" sqlStatement="select uuid_short()" identity="false" />
+        </table>
+         <table tableName="jp_essay_classify" domainObjectName="EssayClassify">
+            <generatedKey column="id" sqlStatement="select uuid_short()" identity="false" />
+        </table>
+        <table tableName="jp_essay_comment" domainObjectName="EssayComment">
+            <generatedKey column="id" sqlStatement="select uuid_short()" identity="false" />
+        </table>
+        <table tableName="jp_essay_like" domainObjectName="EssayLike">
+            <generatedKey column="id" sqlStatement="select uuid_short()" identity="false" />
+        </table>-->
+
+        <!-- <table tableName="jp_wx_user" domainObjectName="WxUser">
+             <generatedKey column="id" sqlStatement="select uuid_short()" identity="false" />
+         </table>-->
+        <!-- <table tableName="jp_classify_standard_data" domainObjectName="ClassifyStandardData">
+             <generatedKey column="id" sqlStatement="select uuid_short()" identity="false" />
+         </table>
+         <table tableName="jp_ingredient" domainObjectName="Ingredient">
+             <generatedKey column="id" sqlStatement="select uuid_short()" identity="false" />
+         </table>
+         <table tableName="jp_ingredient_classify" domainObjectName="IngredientClassify">
+             <generatedKey column="id" sqlStatement="select uuid_short()" identity="false" />
+         </table>
+         <table tableName="jp_tag" domainObjectName="Tag">
+           <generatedKey column="id" sqlStatement="select uuid_short()" identity="false" />
+         </table>
+         <table tableName="jp_module" domainObjectName="Module">
+             <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />
+             <columnOverride column="ID" property="id" javaType="String" />
+         </table>
+         <table tableName="jp_classify_extend_field" domainObjectName="ClassifyExtendField">
+             <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />
+             <columnOverride column="ID" property="id" javaType="String" />
+         </table>
+
+         <table tableName="jp_classify_extend_field" domainObjectName="ClassifyExtendField">
+             <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />
+             <columnOverride column="ID" property="id" javaType="String" />
+         </table>
+         <table tableName="jp_ingredient_extend_field" domainObjectName="IngredientExtendField">
+             <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />
+             <columnOverride column="ID" property="id" javaType="String" />
+         </table>
+
+         <table tableName="jp_ingredient_extend_field" domainObjectName="IngredientExtendField">
+             <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />
+             <columnOverride column="ID" property="id" javaType="String" />
+         </table>
+         <table tableName="jp_essay_cover" domainObjectName="EssayCover">
+             <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />
+             <columnOverride column="ID" property="id" javaType="String" />
+         </table>-->
+        <!--<table tableName="jp_audit_record" domainObjectName="AuditRecord">
+            <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />
+            <columnOverride column="ID" property="id" javaType="String" />
+        </table>-->
+        <!-- <table tableName="jp_product_ingredient" domainObjectName="ProductIngredient">
+             <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false" />
+             <columnOverride column="ID" property="id" javaType="String" />
+         </table>-->
+        <!--<table tableName="jp_additional" domainObjectName="Additional">
+            <generatedKey column="id" sqlStatement="select uuid_short()" identity="false" />
+        </table>
+        <table tableName="jp_standard_data" domainObjectName="StandardData">
+            <generatedKey column="id" sqlStatement="select uuid_short()" identity="false"/>
+        </table>-->
+
+        <table tableName="jp_product" domainObjectName="Product">
+            <generatedKey column="id" sqlStatement="select uuid_short()" identity="false" />
+            <columnOverride column="id" property="id" javaType="String" />
+        </table>
+
+    </context>
+</generatorConfiguration>
